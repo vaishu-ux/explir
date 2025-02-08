@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ELIXIR</title>
+
+    <style>
+        /* Responsive Grid - Bootstrap already provides col classes */
+        @media only screen and (max-width: 768px) {
+            [class*="fol-"] { font-size: 20px; }
+        }
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] { width: 100%; } /* Make columns stack vertically */
+        }
+
+        /* Background Image Section */
+        .hero {
+            background-image: url('mountain.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            position: relative;
+        }
+
+        /* Overlay for better readability */
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Centering text */
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 3px red;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .fol-1 { font-size: 80px; }
+
+        /* Text animation */
+        #di {
+            animation-name: example;
+            position: relative;
+            animation-iteration-count: 1;
+            animation-duration: 5s;
+        }
+
+        @keyframes example {
+            0% { left: 0px; top: -40px; }
+            100% { left: 0px; top: 0px; }
+        }
+
+        /* About Section */
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-content: space-around;
+            gap: 1em;
+        }
+
+        .item-1, .item-2 {
+            width: 500px;
+            height: 500px;
+        }
+
+        /* About Content */
+        .container-1 {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-content: space-around;
+            gap: 1em;
+        }
+
+        .item-11 {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+
+        /* Services Section */
+        .container-a {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .itema {
+            width: 300px;
+        height: 300px;
+        background-color: white; /* Default semi-transparent background */
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        transition: background-color 0.3s ease; /* Allows small box to be positioned inside */
+        }
+
+        /* Small Box in Corner */
+        .small-box {
+            width: 50px;
+            height: 50px;
+            background-color:blue;
+            position: absolute;
+            bottom: 0; /* Adjust for bottom placement */
+            right: 0; /* Adjust for left placement */
+            border: 2px solid black;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ELIXIR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown link</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero row">
+        <div class="overlay"></div>
+        <div class="hero-text" onmouseover="showHeading()">
+            <h1 class="fol-1" id="di">WELCOME TO ELIXIR</h1>
+            <p>WE ARE A TEAM OF TALENTED DESIGNERS MAKING WEBSITES WITH BOOTSTRAP</p>
+        </div>
+    </div>
+
+    <br>
+
+    <script>
+        function showHeading() {
+            document.getElementById('di').style.display = "block";
+        }
+    </script>
+
+    <!-- About Us -->
+    <div style="text-align: center; width: 100%; height: 200px;">
+        <h1 style="font-size: 50px;">About Us</h1>
+        <h5>We love to craft digital experiences for brands rather than producing generic content.</h5>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="item-1 item"><img src="mountain.jpeg" width="100%" height="100%"></div>
+        <div class="item-2 item container-1">
+            <div class="item-11"><h5><u>About Elixir</u></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item-11"><h5>We are Awesome</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item-11"><h5>We are Creative</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item-11"><h5>We Innovate</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Services Section -->
+    <div style="text-align: center; width: 100%; height: 200px;">
+        <h1 style="font-size: 50px;">Awesome Services</h1>
+        <h5>We create unique digital experiences for brands.</h5>
+    </div>
+
+    <br>
+
+    <div class="container-a">
+        <div class="itema" onmouseover="on(this)" onmouseout="off(this)">
+            <div class="small-box"></div>
+            <p>Box 1 Content</p>
+        </div>
+        <div class="itema" onmouseover="on(this)" onmouseout="off(this)">
+            <div class="small-box"></div>
+            <p>Box 2 Content</p>
+        </div>
+        <div class="itema" onmouseover="on(this)" onmouseout="off(this)">
+            <div class="small-box"></div>
+            <p>Box 3 Content</p>
+        </div>
+    </div>
+    
+    <script>
+        function on(element) {
+            element.style.backgroundColor = "blue";  // Change to blue on hover
+        }
+    
+        function off(element) {
+            element.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Return to semi-transparent
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
